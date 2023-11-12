@@ -88,7 +88,7 @@
 		<form action="#" th:action="@{/virement}" th:object="${operation}" method="PUT">
 		
 		  <div class="form-group">
-		    <label style="color:white;font-size:20px" >Nom Employe </label >
+		    <label style="" >Nom Employe </label >
 		  <select th:field="*{employe}" class="form-control">
                          <option value=""> -- </option>
                          <option th:each="employe : ${AllEmployes}"
@@ -97,19 +97,21 @@
           </select >
 		  </div>
 		  <div class="form-group">
-		    <label style="color:white;font-size:20px">Code Compte à debite</label>
-		    <input type="text" class="form-control"   th:field="*{compte}">
+		    <label style="">Code Compte à debite</label>
+			  <input type="text" class="form-control"  placeholder="codeCompte" th:field="*{compte}">
+
 		  
 		  </div>
 		  
 		  <div class="form-group">
-		    <label style="color:white;font-size:20px">Code Compte à credite</label>
-		    <input type="text" class="form-control"   th:field="*{compte}">
+		    <label style="">Code Compte à credite</label>
+			  <input type="text" class="form-control"  placeholder="codeCompte" th:field="*{compte}">
+
 		  
 		  </div>
   
 		   <div class="form-group">
-		    <label style="color:white;font-size:20px">Montant   </label>
+		    <label style="">Montant   </label>
 		    <input type="text" class="form-control"  th:field="*{montant}">
 		  </div>
 		  </br></br>

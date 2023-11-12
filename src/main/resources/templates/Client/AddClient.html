@@ -6,8 +6,8 @@
 	<link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
 </head>
 <body>
-		
-	<nav class="navbar navbar-expand-lg navbar">			
+
+	<nav class="navbar navbar-expand-lg navbar">
   			<div class="collapse navbar-collapse "  id="navbarSupportedContent">
   			</br>
 
@@ -23,7 +23,7 @@
           						<a class="dropdown-item" th:href="@{/showAddGroupeForm}">Ajouter un groupe</a>
         					</div>
       				</li>
-      				
+
       				<li class="nav-item dropdown active">
         				<a class="nav-link dropdown-toggle" style=" font-size:20px" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Client</a>
         					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -46,10 +46,10 @@
           						<a class="dropdown-item" th:href="@{/ajouterCompteCourant}">Ajouter Compte Courant</a>
           						<div class="dropdown-divider"></div>
           						<a class="dropdown-item" th:href="@{/ajouterCompteEpargne}">Ajouter Compte Epargne</a>
-          					
+
         					</div>
       				</li>
-      				
+
       				<li class="nav-item dropdown active">
         				<a class="nav-link dropdown-toggle" style=" font-size:20px" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Op eration</a>
         					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -60,20 +60,20 @@
           						<a class="dropdown-item" th:href="@{/showVirementForm}">Virement</a>
         					</div>
       				</li>
-      				
+
       				<li class="nav-item dropdown active">
         				<a class="nav-link dropdown-toggle" style=" font-size:20px" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Consultation</a>
         					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          					
+
           						<a class="dropdown-item" th:href="@{/ConsulterCompte}">Un Compte</a>
           						<div class="dropdown-divider"></div>
           						<a class="dropdown-item" th:href="@{/ConsulterComptesClient}">Les Comptes d'un client</a>
         						<div class="dropdown-divider"></div>
           						<a class="dropdown-item" th:href="@{/ConsulterOperationCompte}">Page des op erations d'un compte</a>
-        			
+
         					</div>
       				</li>
-      				
+
     			</ul>
   			</div>
 </nav>
@@ -85,11 +85,13 @@
 		<form action="#" th:action="@{/AddClient}" th:object="${client}" method="POST">
 		
 		  <div class="form-group">
-		    <label style="color:white;font-size:20px">Nom Client</label>
-		    <input name="nomClient" th:field="*{nomClient}" type="text" class="form-control" id="formGroupExampleInput1">
+		    <label >Nom Client</label>
+			  <input type="text" class="form-control"  placeholder="Entrer le Nom" th:field="*{nomClient}">
+
 		  </div>
 		  </br></br>
 		  <button type="submit" class="btn btn-success"  style="font-size:20px">Ajouter Client</button>
+			<button type="submit" class="btn btn-success"  style="font-size:20px"th:href="@{/}">Page Home</button>
 		</br></br></br></br></br>
 		</form >
 
