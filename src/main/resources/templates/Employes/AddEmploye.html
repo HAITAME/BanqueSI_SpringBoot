@@ -13,7 +13,7 @@
 
     			<ul class="navbar-nav mr-auto">
     				<li class="nav-item active">
-        				<a class="nav-link" style=" font-size:20px" th:href="@{/}">Home</a>
+        				<a class="nav-link" style=" font-size:20px" th:href="@{/}">Accueil</a>
       				</li>
       				<li class="nav-item dropdown active">
         				<a class="nav-link dropdown-toggle" style=" font-size:20px" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Groupe</a>
@@ -35,9 +35,9 @@
       				<li class="nav-item dropdown active">
         				<a class="nav-link dropdown-toggle" style=" font-size:20px" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Employe</a>
         					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          						<a class="dropdown-item" th:href="@{/employes}">Liste des employ es</a>
+          						<a class="dropdown-item" th:href="@{/employes}">Liste des employes</a>
           						<div class="dropdown-divider"></div>
-          						<a class="dropdown-item" th:href="@{/showAddEmployeForm}">Ajouter un employ e</a>
+          						<a class="dropdown-item" th:href="@{/showAddEmployeForm}">Ajouter un employe</a>
         					</div>
       				</li>
       				<li class="nav-item dropdown active">
@@ -51,7 +51,7 @@
       				</li>
       				
       				<li class="nav-item dropdown active">
-        				<a class="nav-link dropdown-toggle" style=" font-size:20px" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Op eration</a>
+        				<a class="nav-link dropdown-toggle" style=" font-size:20px" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Operation</a>
         					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
           						<a class="dropdown-item" th:href="@{/showVersementForm}">Versement</a>
           						<div class="dropdown-divider"></div>
@@ -69,7 +69,7 @@
           						<div class="dropdown-divider"></div>
           						<a class="dropdown-item" th:href="@{/ConsulterComptesClient}">Les Comptes d'un client</a>
         						<div class="dropdown-divider"></div>
-          						<a class="dropdown-item" th:href="@{/ConsulterOperationCompte}">Page des op erations d'un compte</a>
+          						<a class="dropdown-item" th:href="@{/ConsulterOperationCompte}">Page des operations d'un compte</a>
         			
         					</div>
       				</li>
@@ -90,7 +90,7 @@
 		    <input type="text" class="form-control"  placeholder="Entrer le Nom" th:field="*{nomEmploye}">
 		  </div>
 		  <div class="form-group">
-		  <label style="color:white;font-size:20px">Nom Employe Sup</label>
+		  <label style="font-size:20px">Nom Employe Sup</label>
 		   <select  th:field="*{employeSup}" class="form-control">
                          <option value=""> -- </option>
                          <option th:each="employe : ${AllEmployes}"
@@ -98,33 +98,55 @@
                             th:utext="${employe.nomEmploye}"/>
                   </select  >
 		  </div>
-		  
-		  <div>
-		  
-	<dl style="color:white;font-size:15px">
-        <dt th:each="groupe : ${allgroupes}">
-          <input type="checkbox" th:field="*{groupes}" th:text="${groupe.nomGroupe}" th:value="${groupe.codeGroupe}" />
-        </dt>
-    </dl >
-		  </div>
-		  
-		  <button type="submit" class="btn btn-success"  style="font-size:20px">Ajouter Employe</button>
-		</br></br></br></br></br>
-		</form >
 
-
-	
-  
-		  </div>
-    
-
-
+              <div>
+                  <div class="form-group">
+                      <label style="font-size:20px">Groupe</label>
+                      <select  th:field="*{groupes}" class="form-control">
+                          <option value=""> -- </option>
+                          <option th:each="groupe : ${allgroupes}"
+                                  th:value="${groupe.codeGroupe}"
+                                  th:utext="${groupe.nomGroupe}"/>
+                      </select  >
+				  </div>
+					  <!--
+                          <select th:field="*{selectedGroup}" class="form-control" style="font-size: 15px;">
+                              <option th:each="groupe : ${allgroupes}"
+                                  th:value="${groupe.codeGroupe}"
+                                  th:text="${groupe.nomGroupe}">
+                                  </option>
+                          </select>
 
 
 
 
-	<script th:src="@{/webjars/jquery/3.0.0/jquery.min.js}"></script>
-		<script th:src="@{/webjars/popper.js/1.12.9-1/umd/popper.min.js}"></script>
-		<script th:src="@{/webjars/bootstrap/4.0.0-2/js/bootstrap.min.js}"></script>
-</body >
-</html>
+                          <dl style="font-size:15px">
+            <dt th:each="groupe : ${allgroupes}">
+              <input type="checkbox" th:field="*{groupes}" th:text="${groupe.nomGroupe}" th:value="${groupe.codeGroupe}" />
+            </dt>
+        </dl >
+
+                      -->
+
+
+
+              <button type="submit" class="btn btn-success"  style="font-size:20px">Ajouter Employe</button>
+            </br></br></br></br></br>
+            </form >
+
+
+
+
+              </div>
+
+
+
+
+
+
+
+        <script th:src="@{/webjars/jquery/3.0.0/jquery.min.js}"></script>
+            <script th:src="@{/webjars/popper.js/1.12.9-1/umd/popper.min.js}"></script>
+            <script th:src="@{/webjars/bootstrap/4.0.0-2/js/bootstrap.min.js}"></script>
+    </body >
+    </html>
