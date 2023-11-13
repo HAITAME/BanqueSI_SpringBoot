@@ -41,19 +41,15 @@ public class OperationRestService {
 	private EmployeMetier employeMetier;
 	@Autowired
 	private CompteMetier compteMetier;
-	
-	//@RequestMapping(value="/operations",method=RequestMethod.GET)
-	// public PageOperation getOperation(
-	//		@RequestParam String codeCompte,
-	//		@RequestParam int page,
-	//		@RequestParam int size) {
-	//	return operationMetier.getOperation(codeCompte, page, size);
-	//}
-	
-	
-	
-	
-	
+
+
+
+	@GetMapping("/MenuOperations")
+	public String MenuOperations() {
+		return "operation/MenuOperations";
+	}
+
+
 	@RequestMapping(value="/versement",method=RequestMethod.GET )
 	public String verser(
 			@RequestParam Long employe,
@@ -125,13 +121,7 @@ public class OperationRestService {
 
 		return "Operation/Virement";
 	}
-	
-//	@RequestMapping(value="/AllAcountOperations/{code}",method=RequestMethod.GET) 
-//	public String AllAcountOperations(@PathVariable String code,Model model) {
-//		List<Operation> lo=operationMetier.AllAcountOperations(code);
-//		model.addAttribute("AllAcountOperations", lo);
-//		return "Operation/AllAcountOperations";
-//	} 
+
 	
 	@RequestMapping(value="/AllAcountOperations",method=RequestMethod.GET) 
 	public String AllAcountOperations(@RequestParam (value="code")Long code,
@@ -156,8 +146,4 @@ public class OperationRestService {
 		return "Operation/ConsulterOperation";
 	}
 
-	@GetMapping("/MenuOperations")
-	public String MenuOperations() {
-		return "operation/MenuOperations";
 	}
-}

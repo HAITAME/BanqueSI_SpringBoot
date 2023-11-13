@@ -106,10 +106,12 @@
 
 
 <div class="container">
-		<form action="#" th:action="@{/virement}" th:object="${operation}" method="PUT">
-		
-		  <div class="form-group">
-		    <label style="" >Nom Employe </label >
+
+	<form action="#" th:action="@{/virement}" th:object="${operation}" method="PUT">
+		<h1>Virement</h1>
+
+			<div class="form-group">
+		    <label style="font-size:20px" >Nom Employe </label >
 		  <select th:field="*{employe}" class="form-control">
                          <option value=""> -- </option>
                          <option th:each="employe : ${AllEmployes}"
@@ -118,21 +120,21 @@
           </select >
 		  </div>
 		  <div class="form-group">
-		    <label style="">Code Compte à debite</label>
+		    <label style="font-size:20px">Code Compte à debite</label>
 			  <input type="text" class="form-control"  placeholder="codeCompte" th:field="*{compte}">
 
 		  
 		  </div>
 		  
 		  <div class="form-group">
-		    <label style="">Code Compte à credite</label>
+		    <label style="font-size:20px">Code Compte à credite</label>
 			  <input type="text" class="form-control"  placeholder="codeCompte" th:field="*{compte}">
 
 		  
 		  </div>
   
 		   <div class="form-group">
-		    <label style="">Montant   </label>
+		    <label style="font-size:20px">Montant   </label>
 		    <input type="text" class="form-control"  th:field="*{montant}">
 		  </div>
 		  </br></br>

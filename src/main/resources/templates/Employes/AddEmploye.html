@@ -105,10 +105,10 @@
 <div class="container">
 
 		<form  th:action="@{/saveEmploye}" th:object="${employe}" method="POST">
-		
-		 
+		<h1>Ajouter un employe</h1>
+		 <br>
 		  <div class="form-group">
-		    <label style="">Nom Employe </label>
+		    <label style="font-size:20px">Nom Employe </label>
 		    <input type="text" class="form-control"  placeholder="Entrer le Nom" th:field="*{nomEmploye}">
 		  </div>
 		  <div class="form-group">
@@ -151,7 +151,7 @@
                       -->
 
 
-
+<br>
               <button type="submit" class="btn btn-success"  style="font-size:20px">Ajouter Employe</button>
             </br></br></br></br></br>
             </form >

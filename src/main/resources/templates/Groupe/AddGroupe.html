@@ -101,18 +101,19 @@
  
   
    
-   <!-- Le menu principale   -->
 
 
-<!--le menu secondaire -->
-</br></br>
+</br>
+				   <h1>Cree un groupe</h1>
+
+				   <br><br>
 <div class="container">
 
 		<form action="#" th:action="@{/saveGroupe}" th:object="${groupe}" method="POST">
 		
 		
 		  <div class="form-group">
-		    <label style="">Nom du Groupe </label>
+		    <label style="font-size:20px">Nom du Groupe </label>
 		    <input type="text" class="form-control"  placeholder="Entrer le Nom" th:field="*{nomGroupe}">
 		  </div>
 		  </br></br>

@@ -33,7 +33,6 @@ public class OperationMetierImpl implements OperationMetier {
 	@Transactional
 	public boolean verser(Long code, double montant, Long codeEmp) {
 		
-	//	Compte cp=compteRepository.findOne(code);  // donne un pb
 		Compte cp=compteRepository.findById(code).orElse(null);
 		Employe e= employeRepository.findById(codeEmp).orElse(null);
 		Operation o = new Versment();
@@ -51,7 +50,7 @@ public class OperationMetierImpl implements OperationMetier {
 	public boolean retirer(Long code, double montant, Long codeEmp) {
 		
 		Compte cp=compteRepository.findById(code).orElse(null);
-		if(cp.getSolde()<montant) throw new RuntimeException("Solde Insuffisant");
+		if(cp.getSolde()<montant) throw new RuntimeException("!! Solde Insuffisant !!!");
 		Employe e= employeRepository.findById(codeEmp).orElse(null);
 		Operation o = new Retrait();
 		o.setDateOperation(new Date());
@@ -81,23 +80,6 @@ public class OperationMetierImpl implements OperationMetier {
 		return  operationRepository.AllAcountOperations(code,PageRequest.of(page, size));
 	}
 
-//	@Override
-//	public PageOperation getOperation(String codeCompte, int page, int size) {
-//		
-//		Page<Operation> ops= operationRepository.getOperations(codeCompte, PageRequest.of(page, size));
-//		
-//		// 2 éme Solution
-//		//Compte cp = compteRepository.findById(codeCompte).orElse(null);
-//		//Page<Operation> ops2 = operationRepository.findByCompte(cp, (Pageable) new PageRequest(page, size));
-//		
-//		PageOperation pOp = new PageOperation();
-//		
-//			pOp.setOperations(ops.getContent());
-//			pOp.setNombreOperations(ops.getNumberOfElements());
-//			pOp.setPage(ops.getNumber());
-//			pOp.setTotalpages(ops.getTotalPages());
-//			
-//		return pOp;
-//	}
+
 
 }

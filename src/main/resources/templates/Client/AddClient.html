@@ -105,15 +105,16 @@
 
 <div class="container">
 		<form action="#" th:action="@{/AddClient}" th:object="${client}" method="POST">
-		
-		  <div class="form-group">
-		    <label >Nom Client</label>
+			<h1>Ajouter un client</h1>
+<br>
+			<div class="form-group">
+		    <label style="font-size:20px">Nom Client</label>
 			  <input type="text" class="form-control"  placeholder="Entrer le Nom" th:field="*{nomClient}">
 
 		  </div>
 		  </br></br>
 		  <button type="submit" class="btn btn-success"  style="font-size:20px">Ajouter Client</button>
-			<button type="submit" class="btn btn-success"  style="font-size:20px"th:href="@{/}">Page Accueil</button>
+			<!--<button type="submit" class="btn btn-success"  style="font-size:20px"th:href="@{/}">Page Accueil</button> -->
 		</br></br></br></br></br>
 		</form >
 

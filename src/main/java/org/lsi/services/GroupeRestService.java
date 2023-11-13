@@ -18,7 +18,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class GroupeRestService {
 	@Autowired
 	private GroupeMetier groupeMetier;
-	
+
+	@GetMapping("/MenuGroupe")
+	public String MenuGroupe() {
+		return "Groupe/MenuGroupe";
+	}
 	@GetMapping("/")
 	public String viewHomePage(Model model) {
 		return "pagePrincipale";
@@ -50,10 +54,7 @@ public class GroupeRestService {
 
 
 
-	@GetMapping("/MenuGroupe")
-	public String MenuGroupe() {
-		return "Groupe/MenuGroupe";
-	}
+
 }
 
 
