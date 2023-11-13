@@ -155,4 +155,9 @@ public class OperationRestService {
 		
 		return "Operation/ConsulterOperation";
 	}
+
+	@GetMapping("/MenuOperations")
+	public String MenuOperations() {
+		return "operation/MenuOperations";
+	}
 }

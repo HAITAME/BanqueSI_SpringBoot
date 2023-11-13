@@ -47,8 +47,13 @@ public class GroupeRestService {
 		groupeMetier.saveGroupe(groupe);
 	    return"redirect:/listeGroupe";
 	    }
-	
 
+
+
+	@GetMapping("/MenuGroupe")
+	public String MenuGroupe() {
+		return "Groupe/MenuGroupe";
+	}
 }
 
 

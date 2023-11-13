@@ -100,7 +100,10 @@ public class EmployeRestService {
 	
       return"redirect:/employes";
     }
-	
-	
+
+	@GetMapping("/MenuEmploye")
+	public String MenuGroupe() {
+		return "Employes/MenuEmploye";
+	}
 
 }

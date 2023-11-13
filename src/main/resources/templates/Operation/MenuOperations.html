@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Menu Operations</title>
+        <link rel="stylesheet" type="css" th:href="@{/static/css/style.css}"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    </head>
+</head>
+<body>
+ <div class="container h-100">
+    <div class="row h-100 justify-content-center align-items-center">
+        <div class="col">
+            <br><br><br><br>
+            <h1 class="text-center">Operations</h1>
+            <br><br><br><br>
+            <br><br><br><br>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">Virement</h5>
+                            <p class="card-text">Effectuez un virement d'argent de votre compte.</p>
+                            <a class="btn btn-primary" th:href="@{/showVirementForm}">Effectuer un virement</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">Retrait</h5>
+                            <p class="card-text">Effectuez un retrait d'argent de votre compte.</p>
+                            <a class="btn btn-primary" th:href="@{/showRetraitFrom}">Effectuer un retrait</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">Versement</h5>
+                            <p class="card-text">Effectuez un versement d'argent sur votre compte.</p>
+                            <a class="btn btn-primary" th:href="@{/showVersementForm}">Effectuer un versement</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+</body>
+</html>

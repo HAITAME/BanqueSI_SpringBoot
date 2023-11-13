@@ -3,139 +3,110 @@
 <head>
 	<meta charset="ISO-8859-1">
 	<title>Clients</title>
-	<link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+	<link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css}"/>
 </head>
-<body >
+<body>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+	<div class="container-fluid">
+		<!-- Toggle button -->
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+
+		<a class="navbar-brand"  th:href="@{/}">
+			<img src="https://e7.pngegg.com/pngimages/54/277/png-clipart-graphics-computer-icons-illustration-bank-text-logo.png" height="25" alt="MDB Logo" loading="lazy"/>
+		</a>
+
+
+	</div>
+</nav>
+
+<!-- Sidebar -->
+<div class="container-fluid">
+	<div class="row">
+		<nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar">
+			<div class="sidebar-sticky">
+				<ul class="nav flex-column">
+				<li class="nav-item active">
+					<a class="nav-link" style=" font-size:20px" th:href="@{/}">Accueil</a>
+				</li>
+					<br>
+					<br>
+					<br>
+					<li class="nav-item">
+						<a class="nav-link " style=" font-size:20px" href="#" role="button" th:href="@{/MenuEmploye}">Employe</a>
+
+					</li>
+
+
+					<br>
+					<br>
+
+				<li class="nav-item ">
+					<a class="nav-link " style=" font-size:20px" href="#" role="button"  th:href="@{/MenuClients}" >Client</a>
+
+				</li>
+					<br>
+					<br>
+
+
+					<li class="nav-item ">
+					<a class="nav-link" style=" font-size:20px" href="#"  role="button" th:href="@{/MenuComptes}" >Compte</a>
+
+				</li>
+
+
+					<br>
+
+					<br>
+					<li class="nav-item ">
+						<a class="nav-link " style=" font-size:20px" href="#" role="button" th:href="@{/MenuGroupe}" >Groupe</a>
+
+					</li>
+
+					<br>
+
+					<br>
+					<li class="nav-item ">
+						<a class="nav-link" style=" font-size:20px" href="#"  role="button" th:href="@{/MenuOperations}" >Operation</a>
+
+					</li>
 
 
 
-</br>
-</br>
-<div class="container">
-  <div class="row">
-    <div class="col" >
-		     <div class="card border-secondary mb-3" style="max-width: 20rem;">
-		  <div class="card-header"  >
-		  Clients</div>
-		  <div class="card-body text-secondary">
-			  <div class="card" style="width: 18rem;">
-				  <ul class="list-group list-group-flush">
-					  <li class="list-group-item"><a class="dropdown-item"  th:href="@{/clients}">Liste des clients</a></li>
-					  <li class="list-group-item"><a class="dropdown-item" th:href="@{/showAddClientForm}">Ajouter un client</a></li>
-				  </ul>
-			  </div>
-		    </div>
-          </div>
-   <div class="card border-secondary mb-3" style="max-width: 20rem;">
-		  <div class="card-header">
-		  Employe</div>
-		  <div class="card-body text-secondary">
-			  <div class="card" style="width: 18rem;">
-				  <ul class="list-group list-group-flush">
-					  <li class="list-group-item"><a class="dropdown-item" th:href="@{/showAddEmployeForm}">Ajouter un employe</a></li>
-					  <li class="list-group-item"><a class="dropdown-item" th:href="@{/employes}">Liste des employes</a></li>
+					<br>
 
-				  </ul>
-			  </div>
-		  </div>
-          </div>
-    </div>
+					<br>
 
+					<li>					<br>
+						<br>
+						<br>
+						<br>
+					</li>
+					<li>
+						<br>
+						<br>
+				</li>
 
+			</ul>
+			</div>
+		</nav>
 
-
-
-
-    <div class="col">
-     	<div class="card border-secondary mb-3" style="max-width: 20rem;">
-		  <div class="card-header">
-		  Comptes</div>
-		  <div class="card-body text-secondary">
-			  <div class="card" style="width: 18rem;">
-				  <ul class="list-group list-group-flush">
-					  <li class="list-group-item">
-						  <a class="dropdown-item" th:href="@{/ajouterCompteCourant}">Ajouter Compte Courant</a>
-					  </li>
-					  <li class="list-group-item">
-						  <a class="dropdown-item" th:href="@{/ajouterCompteEpargne}">Ajouter Compte Epargne</a>
-
-					  </li>
-				  </ul>
-			  </div>
-		   </div>
-          </div>
-   <div class="card border-secondary mb-3" style="max-width: 20rem;">
-		  <div class="card-header">
-		  Operations</div>
-		  <div class="card-body text-secondary">
-			  <li class="list-group-item">
-			  	<a class="dropdown-item" th:href="@{/showVirementForm}">Virement</a>
-			  </li>
-			  <li class="list-group-item">
-			 	 <a class="dropdown-item" th:href="@{/showRetraitFrom}">Retrait</a>
-			  </li>
-			  <li class="list-group-item">
-			 	 <a class="dropdown-item" th:href="@{/showVersementForm}">Versement</a>
-			  </li>
-
-		  </div>
-          </div>
-    </div>
-
-
-
-
-
-
-     <div class="col">
-     	<div class="card border-secondary mb-3" style="max-width: 20rem;">
-		  <div class="card-header">
-		  Consultation des comptes</div>
-		  <div class="card-body text-secondary">
-				  <div class="card" style="width: 18rem;">
-					  <ul class="list-group list-group-flush">
-						  <li class="list-group-item">
-							  <a class="dropdown-item" th:href="@{/ConsulterCompte}">Un Compte</a>
-						  </li>
-						  <li class="list-group-item">
-							  <a class="dropdown-item" th:href="@{/ConsulterComptesClient}">Les Comptes d'un client</a>
-						  </li>
-						  <li class="list-group-item">
-						  <a class="dropdown-item" th:href="@{/ConsulterOperationCompte}">Page des operations d'un compte</a>
-						  </li>
-
-					  </ul>
-				  </div>
-			  </div>
-          </div>
-   <div class="card border-secondary mb-3" style=" max-width: 20rem;b">
-		  <div class="card-header">
-		  Groupe</div>
-	      <div class="card-body text-secondary">
-		  	 <div class="card" style="width: 18rem;">
-				   <ul class="list-group list-group-flush">
-					   <li class="list-group-item">
-						   <a class="dropdown-item"  th:href="@{/listeGroupe}">Liste des groupes</a>
-					   </li>
-				   		<li class="list-group-item">
-							<a class="dropdown-item" th:href="@{/showAddGroupeForm}">Ajouter un groupe</a>
-						</li>
-
-				   </ul>
-
-			 </div>
-		   </div>
-		  </div>
-          </div>
-    </div>
-  </div>
-
+		<!-- Main content -->
+		<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4" style="margin-top: 58px;">
+			<div class="container pt-4">
+				<!-- Your main content goes here -->
+				<p>eojhzejhg iuez  iu</p>
+			</div>
+		</main>
+	</div>
 </div>
 
-
-
-	<script th:src="@{/webjars/jquery/3.0.0/jquery.min.js}"></script>
-	<script th:src="@{/webjars/popper.js/1.12.9-1/umd/popper.min.js}"></script>
-	<script th:src="@{/webjars/bootstrap/4.0.0-2/js/bootstrap.min.js}"></script>
-</body >
+<!-- Bootstrap and jQuery scripts -->
+<script th:src="@{/webjars/jquery/3.0.0/jquery.min.js}"></script>
+<script th:src="@{/webjars/popper.js/1.12.9-1/umd/popper.min.js}"></script>
+<script th:src="@{/webjars/bootstrap/4.0.0-2/js/bootstrap.min.js}"></script>
+</body>
 </html>

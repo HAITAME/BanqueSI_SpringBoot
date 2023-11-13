@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Menu Employes</title>
+        <link rel="stylesheet" type="css" th:href="@{/static/css/style.css}"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    </head>
+</head>
+<body>
+ <div class="container h-100">
+    <div class="row h-100 justify-content-center align-items-center">
+        <div class="col">
+            <br><br><br><br>
+            <h1 class="text-center">Employes</h1>
+            <br><br><br><br>
+            <br><br><br><br>
+
+            <div class="row">
+                <div class="col-sm-6 mb-3 mb-sm-0">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Liste des Employes</h5>
+                            <div class="col   ">
+
+                            <p class="card-text" >Explorez et visualisez la liste des Employes existants.</p>
+                            <a class="btn btn-primary" th:href="@{/employes}">Voir</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Ajouter un employe</h5>
+                            <div class="col  " >
+
+                            <p class="card-text">Ajoutez un nouveau employe au système.</p>
+                            <a class="btn btn-primary" th:href="@{/showAddEmployeForm}">Ajouter</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
