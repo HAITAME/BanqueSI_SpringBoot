@@ -8,8 +8,8 @@ import org.springframework.data.domain.Page;
 public interface EmployeMetier {
 	
 	public Employe saveEmploye(Employe e);
-	public Page<Employe> listEmployes(int page,int size);
 	public List<Employe> listEmployes();
+	public Page<Employe> listEmployes(int page,int size);
 	public Employe findByCodeEmploye(Long id);
 
 }

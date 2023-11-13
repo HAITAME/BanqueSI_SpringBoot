@@ -11,7 +11,14 @@ import javax.persistence.Entity;
 public class CompteEpargne extends Compte {
 	
 	private double taux;
-
+	public CompteEpargne() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public CompteEpargne(Long codeCompte, Date dateCreation, double solde, double taux) {
+		super(codeCompte, dateCreation, solde);
+		this.taux = taux;
+	}
 	public double getTaux() {
 		return taux;
 	}
@@ -20,14 +27,6 @@ public class CompteEpargne extends Compte {
 		this.taux = taux;
 	}
 
-	public CompteEpargne(Long codeCompte, Date dateCreation, double solde, double taux) {
-		super(codeCompte, dateCreation, solde);
-		this.taux = taux;
-	}
 
-	public CompteEpargne() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
 
 }

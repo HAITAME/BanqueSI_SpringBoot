@@ -50,14 +50,16 @@ public class OperationMetierImpl implements OperationMetier {
 	public boolean retirer(Long code, double montant, Long codeEmp) {
 		
 		Compte cp=compteRepository.findById(code).orElse(null);
-		if(cp.getSolde()<montant) throw new RuntimeException("!! Solde Insuffisant !!!");
+		if(cp.getSolde()<montant) throw new RuntimeException("Attention : Solde Insuffisant !!!");
+
+		/*                  */
 		Employe e= employeRepository.findById(codeEmp).orElse(null);
-		Operation o = new Retrait();
-		o.setDateOperation(new Date());
-		o.setMontant(montant);
-		o.setCompte(cp);
-		o.setEmploye(e);
-		operationRepository.save(o);
+		Operation op = new Retrait();
+		op.setDateOperation(new Date());
+		op.setMontant(montant);
+		op.setCompte(cp);
+		op.setEmploye(e);
+		operationRepository.save(op);
 		cp.setSolde(cp.getSolde()-montant);
 		return true;
 	}
